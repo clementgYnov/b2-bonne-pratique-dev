@@ -1,0 +1,49 @@
+var unusedVariable = "je ne suis jamais utilisée";
+let anotherUnused;
+
+function badFunction(param1, param2) {
+    console.log("Debug message"); // eslint prefer no console
+    
+    var redeclared = "first";
+    var redeclared = "second"; // redeclaration
+    
+    if (param1 == param2) { // should use ===
+        return true;
+    }
+    
+    // unreachable code
+    console.log("This will never run");
+    
+    let x = 1
+    let y = 2 // missing semicolons
+    
+    // unused parameter param2
+}
+
+// missing semicolon
+const myObject = {
+    prop1: "value1",
+    prop2: "value2", // trailing comma might cause issues depending on config
+}
+
+function emptyFunction() {
+    // empty function body
+}
+
+// global variable without declaration
+globalVar = "I'm global";
+
+if (true) {
+    var blockScoped = "should use let/const";
+}
+
+// function never called
+function deadCode() {
+    return "never used";
+}
+
+eval("console.log('eval is evil')"); // eval usage
+
+// inconsistent spacing
+let spaced=1+2;
+let  extraSpaced = 3  +  4;
